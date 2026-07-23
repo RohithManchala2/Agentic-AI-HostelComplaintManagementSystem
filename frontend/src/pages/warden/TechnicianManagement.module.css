@@ -1,0 +1,163 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.headerCard {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.headerCard h2 {
+  margin: 0 0 6px;
+}
+
+.headerCard p {
+  margin: 0;
+  color: var(--muted-text);
+}
+
+.searchField {
+  min-width: min(320px, 100%);
+}
+
+.searchField input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.table th {
+  color: var(--muted-text);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.userCell {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #0f766e);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+.inlineFields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.available {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.busy {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 8px 12px;
+}
+
+.primaryButton {
+  background: var(--primary-color);
+}
+
+.secondaryButton {
+  background: #64748b;
+}
+
+.loadingState,
+.emptyState,
+.validationBox {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--muted-text);
+}
+
+.validationBox {
+  background: #fef2f2;
+  color: #b91c1c;
+  text-align: left;
+}
+
+.validationBox p {
+  margin: 4px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  color: var(--muted-text);
+}
+
+@media (max-width: 768px) {
+  .headerCard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchField {
+    min-width: 100%;
+  }
+}

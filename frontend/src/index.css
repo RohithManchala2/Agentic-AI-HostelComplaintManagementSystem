@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --primary-color: #10b981;
+  --secondary-color: #22c55e;
+  --background-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #1f2933;
+  --muted-text: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+input,
+textarea,
+select {
+  font-family: 'Inter', sans-serif;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+button:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.18);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* Base toast style */
+.Toastify__toast {
+  background-color: #0f172a !important; /* dark navy */
+  color: #ffffff !important;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Success toast */
+.Toastify__toast--success {
+  background-color: #166534 !important; /* green */
+}
+
+/* Error toast */
+.Toastify__toast--error {
+  background-color: #7f1d1d !important; /* red */
+}
+
+/* Info toast */
+.Toastify__toast--info {
+  background-color: #1e3a8a !important; /* blue */
+}
+
+/* Warning toast */
+.Toastify__toast--warning {
+  background-color: #92400e !important; /* orange */
+}
+
+/* Progress bar */
+.Toastify__progress-bar {
+  background: #22c55e !important;
+}
+
+/* Close button */
+.Toastify__close-button {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+

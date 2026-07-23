@@ -1,0 +1,67 @@
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+}
+
+.category {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Status badge */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Status colors */
+.Pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.InProgress {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.Resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+@media (max-width: 600px) {
+  .top { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer { flex-direction: column; gap: 8px; }
+  .card { padding: 12px; }
+}

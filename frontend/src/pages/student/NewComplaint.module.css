@@ -1,0 +1,70 @@
+/* Parent container — centers the form */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* Horizontal center */
+  align-items: center;       /* Vertical center */
+  background-color: #f5f7fb;
+}
+
+/* Form card */
+.form {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Heading */
+.form h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+/* Inputs */
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* Textarea height */
+.form textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* Row for block & room */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Submit button */
+.form button {
+  width: 100%;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #059669;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 16px; align-items: flex-start; justify-content: flex-start; }
+  .form { max-width: 95%; padding: 16px; }
+  .row { flex-direction: column; }
+  input, textarea, select, button { width: 100%; }
+}

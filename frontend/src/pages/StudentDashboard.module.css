@@ -1,0 +1,18 @@
+
+.page {
+  padding: 25px;
+  flex: 1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .page { padding: 12px; }
+  .heading { font-size: 18px; }
+  .stats { grid-template-columns: 1fr; gap: 12px; }
+}

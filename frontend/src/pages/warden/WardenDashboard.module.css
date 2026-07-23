@@ -1,0 +1,119 @@
+.page {
+  padding: 32px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
+  margin: 28px 0;
+}
+
+.heading {
+  margin: 32px 0 18px;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.tag {
+  background: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.assignBtn {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.assignBtn:hover {
+  transform: translateY(-1px);
+  background: #1d4ed8;
+}
+
+.assigned {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.modalBox {
+  background: white;
+  padding: 26px;
+  border-radius: 24px;
+  width: 360px;
+  max-width: 100%;
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.18);
+}
+
+.techBtn {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  background: #f8fafc;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.techBtn:hover {
+  transform: translateY(-1px);
+  background: #eef2ff;
+}
+
+.closeBtn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .stats { grid-template-columns: 1fr; gap: 16px; }
+  .card { flex-direction: column; align-items: flex-start; padding: 16px; }
+  .tag { margin-top: 8px; }
+  .modalBox { width: 100%; max-width: 100%; }
+  .techBtn, .closeBtn { width: 100%; }
+}

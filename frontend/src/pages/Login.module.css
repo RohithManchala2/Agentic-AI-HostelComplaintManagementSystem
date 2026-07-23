@@ -1,0 +1,72 @@
+.container {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 380px;
+  background-color: var(--card-bg);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.subText {
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.passwordRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.passwordRow input {
+  flex: 1;
+}
+
+.toggleButton {
+  padding: 9px 12px;
+  white-space: nowrap;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.button {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted-text);
+}
+
+.footer span {
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+}

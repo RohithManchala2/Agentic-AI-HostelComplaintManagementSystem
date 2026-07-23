@@ -1,0 +1,78 @@
+.page {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.heading {
+  margin: 25px 0 15px;
+  font-size: 22px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.left h4 {
+  margin: 0 0 6px;
+}
+
+.left p {
+  margin: 0 0 10px;
+  color: #4b5563;
+}
+
+.meta {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+
+.category {
+  background: #fef3c7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #92400e;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pending {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fdba74;
+}
+
+.assigned {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #93c5fd;
+}
+
+.fixed {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #6ee7b7;
+}
+
+@media (max-width: 600px) {
+  .card { flex-direction: column; align-items: flex-start; padding: 12px; }
+  .left { width: 100%; }
+  .right { width: 100%; margin-top: 10px; }
+  .meta { gap: 8px; font-size: 13px; }
+  .badge { font-size: 13px; padding: 6px 10px; }
+}
