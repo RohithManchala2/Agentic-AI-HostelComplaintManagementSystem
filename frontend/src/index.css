@@ -10,11 +10,26 @@
   --border-color: #e5e7eb;
 }
 
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   background-color: var(--background-color);
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -72,6 +87,23 @@ button:disabled {
   transform: none;
   box-shadow: none;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
 /* Base toast style */
 .Toastify__toast {
   background-color: #0f172a !important; /* dark navy */

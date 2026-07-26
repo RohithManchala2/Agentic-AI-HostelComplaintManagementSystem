@@ -4,7 +4,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import connectDB from './configs/db.js';
 import userRoutes from "./routes/userRoutes.js";
-import complaintRoutes from "./routes/complaintRoutes.js"
+import complaintRoutes from "./routes/complaintRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -18,8 +19,9 @@ app.use(cookieParser());
 app.use(cors({origin: allowedOrigins, credentials: true}));
 
 /*routes*/
-app.use("/api/user",userRoutes);
-app.use("/api/complaint",complaintRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/complaint", complaintRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.listen(port,()=>{
     console.log(`Server is running on http://localhost:${port}`);

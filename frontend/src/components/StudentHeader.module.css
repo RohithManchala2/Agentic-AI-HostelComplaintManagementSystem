@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .header h1 {
@@ -20,4 +22,16 @@
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .header button {
+    width: 100%;
+  }
 }

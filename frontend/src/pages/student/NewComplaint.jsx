@@ -9,13 +9,11 @@ const NewComplaint = () => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [block, setBlock] = useState("");
-  const [room, setRoom] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !category || !description || !block || !room) {
+    if (!title || !category || !description) {
       toast.error("All fields are required");
       return;
     }
@@ -23,7 +21,7 @@ const NewComplaint = () => {
     try {
       const { data } = await axios.post(
         "/api/complaint/create",
-        { title, category, description, block, room },
+        { title, category, description },
         { withCredentials: true }
       );
 
@@ -32,8 +30,6 @@ const NewComplaint = () => {
       setTitle("");
       setCategory("");
       setDescription("");
-      setBlock("");
-      setRoom("");
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to submit complaint");
     }
@@ -69,22 +65,6 @@ const NewComplaint = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-
-        <div className={styles.row}>
-          <input
-            type="text"
-            placeholder="Block"
-            value={block}
-            onChange={(e) => setBlock(e.target.value)}
-          />
-
-          <input
-            type="text"
-            placeholder="Room"
-            value={room}
-            onChange={(e) => setRoom(e.target.value)}
-          />
-        </div>
 
         <button type="submit">Submit Complaint</button>
       </form>

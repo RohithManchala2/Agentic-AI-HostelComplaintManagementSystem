@@ -59,7 +59,7 @@ const getWardenCredential = () => ({
   password: process.env.WARDEN_PASSWORD?.toString().trim(),
 });
 
-export const getTechnicians = async (req, res) => {
+/*export const getTechnicians = async (req, res) => {
   const { category } = req.query;
 
   try {
@@ -99,6 +99,52 @@ export const getTechnicians = async (req, res) => {
     return sendSuccess(res, 200, "Technicians fetched", technicians);
   } catch (error) {
     console.error("Error in getTechnicians:", error);
+    return sendError(res, 500, "Server error while fetching technicians.");
+  }
+};*/
+export const getTechnicians = async (req, res) => {
+  try {
+    const { category } = req.query;
+
+    const categoryToSpecialty = {
+      Electrical: "Electrician",
+      Plumbing: "Plumber",
+      Carpentry: "Carpenter",
+      Internet: "Network Technician",
+      Cleaning: "Cleaner",
+      Other: "General",
+    };
+
+    let filter = { role: "Technician" };
+
+    if (category) {
+      filter.specialty = categoryToSpecialty[category] || "General";
+    }
+
+    const techs = await User.find(filter).lean();
+
+    const technicians = await Promise.all(
+      techs.map(async (tech) => {
+        const count = await Complaint.countDocuments({
+          assignedTo: tech._id,
+          status: "In Progress",
+        });
+
+        return {
+          _id: tech._id,
+          name: tech.fullName,
+          email: tech.email,
+          phone: tech.phone || "—",
+          specialization: tech.specialty,
+          activeTasks: count,
+          availability: count < 5,
+        };
+      })
+    );
+
+    return sendSuccess(res, 200, "Technicians fetched", technicians);
+  } catch (error) {
+    console.error(error);
     return sendError(res, 500, "Server error while fetching technicians.");
   }
 };

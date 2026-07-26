@@ -1,0 +1,42 @@
+.chatWindow {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: min(400px, calc(100vw - 24px));
+  max-height: min(780px, calc(100vh - 24px));
+  height: auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+  z-index: 9998;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Open */
+.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Closed */
+.close {
+  transform: translateX(120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .chatWindow {
+    width: calc(100vw - 16px);
+    max-height: 82vh;
+    height: auto;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 16px;
+  }
+}
+

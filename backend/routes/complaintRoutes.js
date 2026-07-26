@@ -8,6 +8,7 @@ import {
   assignTechnician,
   technicianComplaints,
   updateStatus,
+  completeComplaint,
 } from "../controllers/complaintController.js";
 
 const router = express.Router();
@@ -20,5 +21,7 @@ router.put("/assign/:id", authMiddleware, roleMiddleware("Warden"), assignTechni
 
 router.get("/assigned", authMiddleware, roleMiddleware("Technician"), technicianComplaints);
 router.put("/status/:id", authMiddleware, roleMiddleware("Technician"), updateStatus);
+
+router.put("/complete",authMiddleware,roleMiddleware("Technician"),completeComplaint);
 
 export default router;

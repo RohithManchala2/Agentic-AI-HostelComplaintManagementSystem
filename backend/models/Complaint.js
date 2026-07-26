@@ -1,41 +1,71 @@
 import mongoose from "mongoose";
 
-const complaintSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  category: {
-    type: String,
-    enum: [
-      "Electrical",
-      "Plumbing",
-      "Cleaning",
-      "Internet",
-      "Carpentry",
-      "Other",
-    ],
-    required:true
-  },
-  description:{type:String,required:true},
-  block: { type: String, required: true },
-  room: { type: String, required: true },
+const complaintSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-  status: {
+    category: {
+      type: String,
+      enum: [
+        "Electrical",
+        "Plumbing",
+        "Cleaning",
+        "Internet",
+        "Carpentry",
+        "Other",
+      ],
+      required: true,
+    },
+
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    block: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    room: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    status: {
       type: String,
       enum: ["Pending", "In Progress", "Resolved"],
       default: "Pending",
     },
-   student: {
+
+    student: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       required: true,
+      index: true,
     },
 
     assignedTo: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       default: null,
+      index: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  },
 );
 
-export default mongoose.model("complaint", complaintSchema);
+// Helpful indexes for faster queries
+complaintSchema.index({ status: 1 });
+complaintSchema.index({ student: 1, status: 1 });
+
+export default mongoose.model("Complaint", complaintSchema);

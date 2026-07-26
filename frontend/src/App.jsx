@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Chatbot from "./components/chatbot";
 
 import StudentLayout from "./layouts/StudentLayout";
 import StudentDashboard from "./pages/student/StudentDashboard";
@@ -34,6 +35,8 @@ const App = () => {
         closeOnClick
         pauseOnHover
       />
+
+      <Chatbot />
 
       <Routes>
         <Route path="/" element={<Home />} />

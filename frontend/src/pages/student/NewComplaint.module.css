@@ -2,9 +2,10 @@
 .container {
   min-height: 100vh;
   display: flex;
-  justify-content: center;   /* Horizontal center */
-  align-items: center;       /* Vertical center */
+  justify-content: center;
+  align-items: center;
   background-color: #f5f7fb;
+  padding: 20px;
 }
 
 /* Form card */
@@ -63,8 +64,26 @@
 }
 
 @media (max-width: 600px) {
-  .container { padding: 16px; align-items: flex-start; justify-content: flex-start; }
-  .form { max-width: 95%; padding: 16px; }
-  .row { flex-direction: column; }
-  input, textarea, select, button { width: 100%; }
+  .container {
+    padding: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .form {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%;
+  }
 }
