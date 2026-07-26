@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hostel-ai-service
+    runtime: python
+    rootDir: ai-services
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MODEL_NAME
+        value: llama-3.3-70b-versatile
+      - key: BACKEND_URL
+        value: https://hostel-backend-yflr.onrender.com
